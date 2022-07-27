@@ -1,0 +1,156 @@
+
+    [
+        {
+            "courseName":"Photoshop Master Course: From Beginner to Photoshop Pro",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/16799_e077_20.jpg",
+            "price":"449",
+            "mrp":"2,299",
+            "description":"This Adobe Photoshop Beginner Course will teach a Beginner Photoshop user all essentials of Adobe Photoshop CC",
+            "category":"design",
+            "instructor":"Manfred Werner",
+            "rating":"4.5"  
+        },
+
+        {
+            "courseName":"User Experience (UX): The Ultimate Guide to Usability and UX",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/28258_8a7e_13.jpg",
+            "mrp":"2,999",
+            "price":"2,999",
+            "description":"Get a job in UX and build your user research and UX design skills with this hands-on user experience training course.",
+            "category":"design",
+            "instructor":"David Travis",
+            "rating":"4.7"  
+        },
+        {
+            "courseName":"Essential Skills for Designers - Masking",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/49553_15ee_7.jpg",
+            "mrp":"1999",
+            "price":"499",
+            "description":"Learn everything you need to know about masking techniques in Adobe Photoshop, Illustrator and InDesign.",
+            "category":"design",
+            "instructor":"Martin Perhiniak",
+            "rating":"4.6"  
+        },
+        {
+            "courseName":"Become a UX Designer | Learn the Skills & Get the Job",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/52512_7152_10.jpg",
+            "mrp":"3999",
+            "price":"499",
+            "description":"UX based on real world examples. Gain powerful UX skills you can use to start a UX career or improve your projects.",
+            "category":"design",
+            "instructor":"Brenden-Bolton-Klinger",
+            "rating":"4.3"  
+        },
+        {
+            "courseName":"Adobe Premiere Pro CC Tutorial - MasterClass Training",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/58838_2d7c_8.jpg",
+            "mrp":"2299",
+            "price":"449",
+            "description":"Adobe Premiere Pro CC tutorial for learning at your own pace from a pro. Over 18 hours of high quality training.",
+            "category":"design",
+            "instructor":"Infinity Skills",
+            "rating":"4.3"  
+        },
+        {
+            "courseName":"Javascript for Beginners",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/8324_fa84_13.jpg",
+            "mrp":"799",
+            "price":"449",
+            "description":"Learn javascript online and supercharge your web design with this Javascript for beginners training course.",
+            "category":"development",
+            "instructor":"Tech Learning Network",
+            "rating":"4.4"  
+        },
+        {
+            "courseName":"Learn C# Programming (In Ten Easy Steps)",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/14346_9972_8.jpg",
+            "mrp":"3,699",
+            "price":"499",
+            "description":"The simplest way to learn C# programming.",
+            "category":"development",
+            "instructor":"Huw Collingbourne",
+            "rating":"4.3"  
+        },
+        {
+            "courseName":"The Complete 2020 Fullstack Web Developer Course",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/19332_6b49_15.jpg",
+            "mrp":"3,499",
+            "price":"449",
+            "description":"Learn HTML5, CSS3, JavaScript, Python, Wagtail CMS, PHP & MySQL from scratch!",
+            "category":"development",
+            "instructor":"kalob Tauline",
+            "rating":"4.5"  
+        },
+        {
+            "courseName":"Kids Coding - Introduction to HTML, CSS and JavaScript!",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/30261_3a1f_11.jpg",
+            "mrp":"3,499",
+            "price":"449",
+            "description":"Your kid could be the next Zuckerberg!",
+            "category":"development",
+            "instructor":"John Bura",
+            "rating":"4.2"  
+        },
+        {
+            "courseName":"Learn Web Designing & HTML5/CSS3 Essentials in 4-Hours",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/28295_6948_7.jpg",
+            "mrp":"2,899",
+            "price":"449",
+            "description":"Convert Photoshop Designs into Stunning HTML5 & CSS3 websites with confidence. Absolutely no prior experience necessary!",
+            "category":"development",
+            "instructor":"Code College",
+            "rating":"4.5"  
+        },
+        {
+            "courseName":"Excel Deep Dive: Pivot Tables Workshop",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/18212_8a1f_8.jpg",
+            "mrp":"3,299",
+            "price":"449",
+            "description":"Excel data mastery is possible! Learn how to use pivot tables in excel and learn how to use pivot tables to get a raise",
+            "category":"personal development",
+            "instructor":"Alex Mozes",
+            "rating":"4.5"  
+        },
+        {
+            "courseName":"Learning How to Learn",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/27698_c0d7_3.jpg",
+            "mrp":"999",
+            "price":"449",
+            "description":"Becoming your own Brain Mechanic - Know how to keep your genius mind open.",
+            "category":"personal development",
+            "instructor":"Donna Cercone",
+            "rating":"4.7"  
+        },
+        {
+            "courseName":"Mind Mapping Mastery –> Effective Mind Maps -> Step by Step",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/47285_35a2_20.jpg",
+            "mrp":"3,499",
+            "price":"449",
+            "description":"Mind Mapping - SMART Productivity and Memory Tool: Think Clearly, Organise, & Plan better; Study, Learn, & Recall Faster",
+            "category":"personal development",
+            "instructor":"Barry Mapp",
+            "rating":"4.5"  
+        },
+
+        {
+            "courseName":"Discover Your Life Purpose",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/101694_a0ad_8.jpg",
+            "mrp":"3,399",
+            "price":"449",
+            "description":"Find your passion, love your career, reach your potential and live a life of meaning, purpose, and fulfillment",
+            "category":"personal development",
+            "instructor":"Joeel",
+            "rating":"4.6"  
+        },
+        {
+            "courseName":"Radiate Confidence: How to Create a 1000 Watt Presence",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/120600_4077_7.jpg",
+            "mrp":"3,499",
+            "price":"449",
+            "description":"Helping you unlock your inner light, or presence, so you can easily, effortlessly connect with everyone you meet.",
+            "category":"personal development",
+            "instructor":"Alex-Fischer",
+            "rating":"4.5"  
+        }
+
+    ]
