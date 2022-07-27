@@ -53,6 +53,23 @@ app.get("/products",async(req,res)=>{
 
 })
 
+app.get("/courses",async(req,res)=>{
+   
+    const {category}=req.body
+  if(category){
+    const data= await courseModel.find({category})
+    console.log("data is",data);
+    res.end(JSON.stringify(data))
+  }
+  else{
+    const data= await courseModel.find()
+    res.end(JSON.stringify(data))
+  }
+    
+  
+  
+})
+
 app.get("/",(req,res)=>res.send("hello world how are you"))
 
 app.listen(process.env.PORT || port,()=>{
