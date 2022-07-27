@@ -20,6 +20,208 @@
             "category":"",
             "instructor":"",
             "rating":""  
+        },
+        {
+            "courseName":"Copywriting - Become a Freelance Copywriter, your own boss",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/12248_0b1d_12.jpg",
+            "mrp":"3,199",
+            "price":"449",
+            "description":"Build a successful freelance copywriting business - turn basic writing skills into a paycheck.",
+            "category":"marketing",
+            "instructor":"Len Smith, Sean kayle",
+            "rating":"4.3"  
+        },
+        {
+            "courseName":"How to Market Yourself as a Coach or Consultant",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/46538_aa04_10.jpg",
+            "mrp":"3,499",
+            "price":"449",
+            "description":"Learn a Proven, Step-by-Step Process You Can Use to Package, Brand, Market, & Sell Your Coaching or Consulting Services",
+            "category":"marketing",
+            "instructor":"Debbie Lachusa",
+            "rating":"4.8"  
+        },
+        {
+            "courseName":"Google Ads for Beginners",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/50735_c4fd_46.jpg",
+            "mrp":"3,499",
+            "price":"449",
+            "description":"Learn how to effectively use Google Ads to reach more customers online and grow your business.",
+            "category":"marketing",
+            "instructor":"Corey Rabazinski",
+            "rating":"4.4"  
+        },  
+        {
+            "courseName":"Marketing Research: support your marketing decisions",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/68736_e4c0_6.jpg",
+            "mrp":"3,199",
+            "price":"449",
+            "description":"Discover the extra advantage of any Business. A practical step by step guide to Marketing Information and Research.",
+            "category":"marketing",
+            "instructor":"Corey Rabazinski",
+            "rating":"4.5"  
+        },
+        {
+            "courseName":"Business Writing & Technical Writing Immersion",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/176138_463f_4.jpg",
+            "mrp":"3,399",
+            "price":"449",
+            "description":"How to plan, structure, outline, write, edit and deliver effective business and technical writing, perfectly every time.",
+            "category":"marketing",
+            "instructor":"Starweaver Team",
+            "rating":"4.5"  
+        },
+        {
+            "courseName":"CCNA 2020 200-125 Video Boot Camp With Chris Bryant",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/10812_b0af_6.jpg",
+            "mrp":"799",
+            "price":"449",
+            "description":"Join The 90,000+ Students Who Are Learning Real-World Skills AND Earning Their CCNA!",
+            "category":"IT & Software",
+            "instructor":"Chris Brynt",
+            "rating":"4.3"  
+        },
+        {
+            "courseName":"CCNP All-in-1 Video Boot Camp With Chris Bryant",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/16429_c92e_5.jpg",
+            "mrp":"2299",
+            "price":"449",
+            "description":"Earn Your CCNP With Chris Bryant ! Pass SWITCH 300-115, ROUTE 300-101, and TSHOOT 300-135!",
+            "category":"IT & Software",
+            "instructor":"Chris Brynt",
+            "rating":"4.7"  
+        },
+        {
+            "courseName":"Introduction To Fiber Optic Cabling",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/22591_b568_6.jpg",
+            "mrp":"799",
+            "price":"449",
+            "description":"Welcome! This course is designed to give you a good understand of fiber optics and fiber data transmission.",
+            "category":"IT & Software",
+            "instructor":"Sebastian Flores",
+            "rating":"4.4"  
+        },
+        {
+            "courseName":"IT Troubleshooting Skill Training",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/32199_6ad0_6.jpg",
+            "mrp":"2,299",
+            "price":"449",
+            "description":"IT Troubleshooting 101 for Analysts and Managers",
+            "category":"IT & Software",
+            "instructor":"Noel Temene",
+            "rating":"4.2"  
+        },
+        {
+            "courseName":"VLSI - Essential concepts and detailed interview guide",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/39551_366c_7.jpg",
+            "mrp":"3,499",
+            "price":"449",
+            "description":"VLSI Academy",
+            "category":"IT & Software",
+            "instructor":"Kunal Gosh",
+            "rating":"4.5"  
+        },
+        {
+            "courseName":"Adventures in Classical Music—Music Appreciation for All!",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/41273_40d1_7.jpg",
+            "mrp":"3,499",
+            "price":"449",
+            "description":"Understand and enjoy classical music at your own pace. A music history course, including a music theory introduction.",
+            "category":"music",
+            "instructor":"Williem Neely",
+            "rating":"4.6"  
+        },
+        {
+            "courseName":"Music Composition 1",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/138902_a9a3_11.jpg",
+            "mrp":"2,299",
+            "price":"649",
+            "description":"Learn how to compose well-written rhythms and melodies",
+            "category":"music",
+            "instructor":"Jonathan Peters ",
+            "rating":"4.5"  
+        },
+        {
+            "courseName":"Music Theory",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/182246_23c0_3.jpg",
+            "mrp":"2,299",
+            "price":"649",
+            "description":"An in-depth and straight forward approach to understanding music.",
+            "category":"music",
+            "instructor":"Jonathan Peters ",
+            "rating":"4.7"  
+        },
+        {
+            "courseName":"Music Composition 2",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/330062_a21c_2.jpg",
+            "mrp":"2,299",
+            "price":"649",
+            "description":"Harmony and Compositional Form",
+            "category":"music",
+            "instructor":"Jonathan Peters ",
+            "rating":"4.5"  
+        },
+        {
+            "courseName":"Prepare for Music Theory ABRSM 1 to 5",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/481428_8eca_3.jpg",
+            "mrp":"1,699",
+            "price":"699",
+            "description":"All you need to know to fast track to success with the ABRSM theory examinations grades 1 - 5.",
+            "category":"music",
+            "instructor":"Micheal Luck ",
+            "rating":"4.9"  
+        },
+
+        {
+            "courseName":"Photography - Become a Better Photographer - Part I",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/15392_15b9_30.jpg",
+            "mrp":"1,499",
+            "price":"699",
+            "description":"See results today! 50 photography tips for taking amazing photos with your DSLR, Mirrorless or compact camera.",
+            "category":"photography",
+            "instructor":"Barnie raffel AMPA",
+            "rating":"4.8"  
+        },
+        {
+            "courseName":"Photography for Kids: Project-Based Beginner Photography",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/73572_220d_9.jpg",
+            "mrp":"3,399",
+            "price":"649",
+            "description":"12 weeks of adventure projects make this the perfect course for kids and beginners to learn how to use a camera properly",
+            "category":"photography",
+            "instructor":"Phil Ebinar",
+            "rating":"4.3"  
+        },
+        {
+            "courseName":"Basic Food Photography",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/119486_87e4_11.jpg",
+            "mrp":"2,299",
+            "price":"449",
+            "description":"Learn how to take delicious food photos from scratch",
+            "category":"photography",
+            "instructor":"Andrew Olson",
+            "rating":"4.5"  
+        },
+        {
+            "courseName":"Beginner Nikon Digital SLR (DSLR) Photography",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/138374_4359_5.jpg",
+            "mrp":"1,299",
+            "price":"449",
+            "description":"Learn how to use your camera intuitively. Learn through doing rather than memorizing.",
+            "category":"photography",
+            "instructor":"JP Teaches",
+            "rating":"4.6"  
+        },
+        {
+            "courseName":"Mastering Architecture and Real Estate Photography",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/142490_7eb7_5.jpg",
+            "mrp":"1,499",
+            "price":"449",
+            "description":"Start a business photographing real estate photography jobs for architects, builders, and real estate agents",
+            "category":"photography",
+            "instructor":"Charlie Blonede",
+            "rating":"4.4"  
         }
+
     ]
 }
