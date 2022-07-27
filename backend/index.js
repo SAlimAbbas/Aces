@@ -2,7 +2,8 @@ const mongoose=require("mongoose")
 const express=require("express")
 const app=express()
 const cors=require("cors")
-const userModel=require("./usermodel")
+const userModel=require("./models/usermodel")
+ const courseModel=require("./models/coursemodel")
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -32,6 +33,41 @@ app.get("/user",async(req,res)=>{
    
     await data.save()
     res.end("success")
+})
+
+app.get("/products",async(req,res)=>{
+
+    const data=new courseModel({
+        "courseName":"User Experience (UX): The Ultimate Guide to Usability and UX",
+        "imgUrl":"https://img-c.udemycdn.com/course/240x135/28258_8a7e_13.jpg",
+        "mrp":2999,
+        "price":2999,
+        "description":"Get a job in UX and build your user research and UX design skills with this hands-on user experience training course.",
+        "category":"design",
+        "instructor":"David Travis",
+        "rating":"4.7"  
+    })
+   
+    await data.save()
+    res.end("success")
+
+})
+
+app.get("/courses",async(req,res)=>{
+   
+    const {category}=req.body
+  if(category){
+    const data= await courseModel.find({category})
+    console.log("data is",data);
+    res.end(JSON.stringify(data))
+  }
+  else{
+    const data= await courseModel.find()
+    res.end(JSON.stringify(data))
+  }
+    
+  
+  
 })
 
 app.get("/",(req,res)=>res.send("hello world how are you"))
