@@ -363,6 +363,56 @@
             "category":"personal development",
             "instructor":"Alex-Fischer",
             "rating":"4.5"  
+        },
+        {
+            "courseName":"Master Your Mindset & Brain: Framestorm Your Way to Success",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/17782_50e2_14.jpg",
+            "mrp":"3,399",
+            "price":"449",
+            "description":"Excel in any situation. Tweak your mindset in brain-smart ways. Master class in reframing based on neuroscience.",
+            "category":"Business",
+            "instructor":"Anette",
+            "rating":"4.5"  
+        },
+        {
+            "courseName":"Customer Service Training",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/20241_f580_5.jpg",
+            "mrp":"2,299",
+            "price":"449",
+            "description":"Learn the basics of customer service its practical application by taking this customer service course.",
+            "category":"Business",
+            "instructor":"Webucator Training",
+            "rating":"4.5"  
+        },
+        {
+            "courseName":"Storytelling for Business",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/30704_aaa6_3.jpg",
+            "mrp":"3,299",
+            "price":"449",
+            "description":"Grab attention. Create emotion. Inspire action.",
+            "category":"Business",
+            "instructor":"Kevin Allison",
+            "rating":"4.2"  
+        },
+        {
+            "courseName":"Directing the Actor: A USC course with Nina Foch",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/33949_3a7e_5.jpg",
+            "mrp":"999",
+            "price":"449",
+            "description":"Learn directing and acting techniques from renowned actress Nina Foch in this USC Master Class.",
+            "category":"Business",
+            "instructor":"Nina Foch",
+            "rating":"4.8"  
+        },
+        {
+            "courseName":"Salary Negotiation: How to Negotiate a Raise or Promotion",
+            "imgUrl":"https://img-c.udemycdn.com/course/240x135/44267_e69e_6.jpg",
+            "mrp":"3,299",
+            "price":"449",
+            "description":"Get paid what you are worth. Awesome salary negotiation tips and training to get a raise or a promotion.",
+            "category":"Business",
+            "instructor":"Jim Hopper",
+            "rating":"4.4"  
         }
 
     ]
