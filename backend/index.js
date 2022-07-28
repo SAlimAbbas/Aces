@@ -144,7 +144,7 @@ app.get("/products",async(req,res)=>{
 
 })
 
-app.get("/courses",async(req,res)=>{
+app.post("/courses",async(req,res)=>{
    
     const {category}=req.body
   if(category){
