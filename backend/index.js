@@ -71,10 +71,26 @@ app.post("/login",async(req,res)=>{
     res.end(token)
 })
 
-app.get("/mycourse",(req,res)=>{
+app.get("/mycourse",async(req,res)=>{
     const {token}=req.body
     const user=jwt.verify(token,"SECRETKEY")
-    res.end(JSON.stringify(user))
+    const allcourses=[]
+    const userdetails=await userModel.findOne({Name:user.name})
+    const t=[]
+    // console.log(userdetails.Buy)
+    userdetails.Buy.map(async(elem)=>{
+       
+       var tempdata= await courseModel.findOne({id:elem})
+    //    console.log("data is",tempdata)
+       allcourses.push(tempdata)
+    
+      
+    })
+    setTimeout(()=>{
+        res.end(JSON.stringify(allcourses))
+    },2000)
+   
+   
 })
 app.post("/buy",async(req,res)=>{
     const {token,courseid}=req.body
@@ -143,6 +159,8 @@ app.get("/products",async(req,res)=>{
     res.end("success")
 
 })
+
+
 
 app.post("/courses",async(req,res)=>{
    
