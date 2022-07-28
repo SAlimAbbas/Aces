@@ -4,6 +4,8 @@ const app=express()
 const cors=require("cors")
 const userModel=require("./models/usermodel")
  const courseModel=require("./models/coursemodel")
+ const adminModel=require("./models/adminmodel")
+
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -27,12 +29,37 @@ mongoose.connect(dburl,connectionparams).then(()=>{
 
 app.get("/user",async(req,res)=>{
     const data=new userModel({
-        "name":"prathmesh",
-        "email":"prathmesh@11"
+        Name:"Alim",
+        email:"Alim@gmail.com",
+        mobile:7777777777,
+        Buy:[],
+        Sell:[],
+        Password:"alim",
+        Amount:2000,
+        transactions:[],
+        role:"user"
     })
    
     await data.save()
     res.end("success")
+})
+
+app.get("/admin",async(req,res)=>{
+
+    const data=new adminModel({
+        Name:"admin",
+        email:"admin@gmail.com",
+        mobile:1111111111,
+       
+        Password:"admin",
+        Amount:2000,
+       
+        role:"admin"
+    })
+   
+    await data.save()
+    res.end("success")
+
 })
 
 app.get("/products",async(req,res)=>{
