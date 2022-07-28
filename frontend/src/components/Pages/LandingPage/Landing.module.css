@@ -1,7 +1,7 @@
 .lgrid{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(2,300px);
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
     /* height: 550px; */
     width: 80%;
     /* border: 1px solid black; */

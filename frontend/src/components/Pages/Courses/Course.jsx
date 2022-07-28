@@ -11,7 +11,7 @@ const Course = () => {
   // console.log(category);
 
   const getData=()=> {
-    axios.post(`http://localhost:8080/courses/${category}`,{
+    axios.post(`http://localhost:8080/courses`,{
     category: category,
   }).then((res)=>setData(res.data))
   .catch((err)=>console.log(err));
