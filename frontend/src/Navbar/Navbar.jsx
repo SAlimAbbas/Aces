@@ -1,5 +1,7 @@
+import { useState} from "react";
 import React from "react";
 import styles from "./Navbar.module.css";
+import axios from "axios";
 import {
   Drawer,
   DrawerBody,
@@ -11,6 +13,7 @@ import {
   useDisclosure,
   Button,
   Input,
+  tokenToCSSVar,
 } from "@chakra-ui/react";
 import { Routes, Route, Link } from "react-router-dom";
 import {
@@ -29,10 +32,18 @@ import {
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const [token,setToken]=useState("");
+  const loginData=(name)=>{
+    axios.post(`http://localhost:8080/login`,{
+      name
+    }).then((response)=>{setToken(response.data)
+      localStorage.setItem('TOKEN',response.data)
+    });
+  }
   return (
     <div className={styles.container}>
       <div>
-        <h1>CourShare-App</h1>
+        <img src="LOGO.jpg" alt="" width={85} height={90}/>
       </div>
       <div>
         <input
@@ -62,7 +73,9 @@ const Navbar = () => {
               <Menu>
                 <MenuButton as={Button}>Your Accounts</MenuButton>
                 <MenuList>
-                  <MenuItem minH="48px">
+                  <MenuItem minH="48px" onClick={()=>{
+                      loginData("Alim")
+                  }}>
                     <Image
                       boxSize="2rem"
                       borderRadius="full"
@@ -72,7 +85,9 @@ const Navbar = () => {
                     />
                     <span>Alim</span>
                   </MenuItem>
-                  <MenuItem minH="40px">
+                  <MenuItem minH="40px" onClick={()=>{
+                      loginData("Papil")
+                  }}>
                     <Image
                       boxSize="2rem"
                       borderRadius="full"
@@ -82,7 +97,9 @@ const Navbar = () => {
                     />
                     <span>Papil</span>
                   </MenuItem>
-                  <MenuItem minH="40px">
+                  <MenuItem minH="40px" onClick={()=>{
+                      loginData("Prathamesh")
+                  }}>
                     <Image
                       boxSize="2rem"
                       borderRadius="full"

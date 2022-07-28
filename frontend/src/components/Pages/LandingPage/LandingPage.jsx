@@ -8,7 +8,8 @@ const LandingPage = () => {
       <h1>All Categories</h1>
       <div className={styles.lgrid} >
 
-        <div className={styles.gridCard} ><Link to='/courses' ><img src='https://www.webdschool.com/img/other.png' /><p>All Categories Courses</p></Link></div>
+        <div className={styles.gridCard} ><Link to='/courses' ><img src='https://www.webdschool.com/img/other.png' />
+        <h2>All Categories Courses</h2></Link></div>
         <div className={styles.gridCard} ><Link to='/courses/design' ><img src='https://s.udemycdn.com/home/top-categories/lohp-category-design-v2.jpg' /><p>Design Courses</p></Link></div>
         <div className={styles.gridCard} ><Link to='/courses/development' ><img src='https://s.udemycdn.com/home/top-categories/lohp-category-development-v2.jpg' /><p>Development Courses</p></Link></div>
         <div className={styles.gridCard} ><Link to='/courses/marketing' ><img src='https://s.udemycdn.com/home/top-categories/lohp-category-marketing-v2.jpg' /><p>Marketing Courses</p></Link></div>
