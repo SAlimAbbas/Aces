@@ -2,8 +2,12 @@ const mongoose=require("mongoose")
 const express=require("express")
 const app=express()
 const cors=require("cors")
+var jwt = require('jsonwebtoken');
 const userModel=require("./models/usermodel")
  const courseModel=require("./models/coursemodel")
+ const adminModel=require("./models/adminmodel")
+ const transactionModel=require("./models/transactionModel")
+
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -27,12 +31,99 @@ mongoose.connect(dburl,connectionparams).then(()=>{
 
 app.get("/user",async(req,res)=>{
     const data=new userModel({
-        "name":"prathmesh",
-        "email":"prathmesh@11"
+        Name:"Alim",
+        email:"Alim@gmail.com",
+        mobile:7777777777,
+        Buy:[],
+        Sell:[],
+        Password:"alim",
+        Amount:2000,
+        transactions:[],
+        role:"user"
     })
    
     await data.save()
     res.end("success")
+})
+
+app.get("/admin",async(req,res)=>{
+
+    const data=new adminModel({
+        Name:"admin",
+        email:"admin@gmail.com",
+        mobile:1111111111,
+       
+        Password:"admin",
+        Amount:2000,
+       
+        role:"admin"
+    })
+   
+    await data.save()
+    res.end("success")
+
+})
+
+app.post("/login",async(req,res)=>{
+    const {name}=req.body
+    const token=jwt.sign({"name":name},"SECRETKEY")
+
+    res.end(token)
+})
+
+app.get("/mycourse",(req,res)=>{
+    const {token}=req.body
+    const user=jwt.verify(token,"SECRETKEY")
+    res.end(JSON.stringify(user))
+})
+app.post("/buy",async(req,res)=>{
+    const {token,courseid}=req.body
+    // token verified
+    const user=jwt.verify(token,"SECRETKEY")
+    console.log("user is ",user)
+    // got username from token 
+   const requser=await userModel.findOne({Name:user.name})
+//    got course id from body
+
+   const reqcourse=await courseModel.findOne({id:courseid})
+
+   if(reqcourse.Amount>requser.Amount){
+    res.end("Inssufficient Balance")
+   }
+   else{
+        
+//    to update Amount of admin after puchasing the product
+   const reqadmin=await adminModel.findOne()
+   const check_duplicate=await userModel.find( { Buy: { $in: [ courseid ] } }, { Name: user.name } )
+    console.log("duplicate checking is ",check_duplicate)
+   if(!check_duplicate[0]){
+        // cousrs add to user Buy section
+    await userModel.updateOne(
+        { Name: user.name },
+        { $push: { Buy: courseid } }
+     )
+    // amout deducted from user account 
+     await userModel.updateOne(
+        {Name:user.name},
+        {$set:{"Amount":requser.Amount-reqcourse.price}}
+     )
+    //  amount added in admin account
+     await adminModel.updateOne({
+        Name:"admin"
+     },{$set:{"Amount":reqadmin.Amount+reqcourse.price}})
+    // await userModel.updateOne( { Name: user.name  }, { $pop: { Buy: -1 } } )
+     const checkuser=await userModel.find({Name:user.name})
+    res.end(JSON.stringify(checkuser))
+   }
+   else{
+    res.end("Course already exist")
+   }
+
+
+   }
+
+
+
 })
 
 app.get("/products",async(req,res)=>{
