@@ -71,24 +71,15 @@ app.post("/login",async(req,res)=>{
     res.end(token)
 })
 
-app.get("/mycourse",async(req,res)=>{
+app.post("/mycourse",async(req,res)=>{
     const {token}=req.body
+    console.log("jwt token is",token)
     const user=jwt.verify(token,"SECRETKEY")
-    const allcourses=[]
-    const userdetails=await userModel.findOne({Name:user.name})
-    const t=[]
-    // console.log(userdetails.Buy)
-    userdetails.Buy.map(async(elem)=>{
-       
-       var tempdata= await courseModel.findOne({id:elem})
-    //    console.log("data is",tempdata)
-       allcourses.push(tempdata)
-    
-      
-    })
-    setTimeout(()=>{
-        res.end(JSON.stringify(allcourses))
-    },2000)
+    console.log(user.name)
+    const data=await userModel.findOne({Name:user.name})
+    console.log(data)
+    res.end(JSON.stringify(data.Buy))
+
    
    
 })
@@ -101,22 +92,21 @@ app.post("/buy",async(req,res)=>{
    const requser=await userModel.findOne({Name:user.name})
 //    got course id from body
 
-   const reqcourse=await courseModel.findOne({id:courseid})
-
-   if(reqcourse.Amount>requser.Amount){
+   
+   const reqcourse=await courseModel.findOne({_id:courseid})
+    
+  
+   if(reqcourse.price>requser.Amount){
     res.end("Inssufficient Balance")
    }
    else{
         
 //    to update Amount of admin after puchasing the product
    const reqadmin=await adminModel.findOne()
-   const check_duplicate=await userModel.find( { Buy: { $in: [ courseid ] } }, { Name: user.name } )
-    console.log("duplicate checking is ",check_duplicate)
-   if(!check_duplicate[0]){
-        // cousrs add to user Buy section
+ 
     await userModel.updateOne(
         { Name: user.name },
-        { $push: { Buy: courseid } }
+        { $push: { Buy: reqcourse } }
      )
     // amout deducted from user account 
      await userModel.updateOne(
@@ -129,16 +119,9 @@ app.post("/buy",async(req,res)=>{
      },{$set:{"Amount":reqadmin.Amount+reqcourse.price}})
     // await userModel.updateOne( { Name: user.name  }, { $pop: { Buy: -1 } } )
      const checkuser=await userModel.find({Name:user.name})
-    res.end(JSON.stringify(checkuser))
+    // res.end(JSON.stringify(checkuser))
+    res.end("Course purchase successfully")
    }
-   else{
-    res.end("Course already exist")
-   }
-
-
-   }
-
-
 
 })
 
