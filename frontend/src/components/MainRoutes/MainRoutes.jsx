@@ -8,7 +8,8 @@ const MainRoutes = () => {
     <div>
      <Routes>
         <Route path='/*' element={<LandingPage/>}/>
-        <Route path='courses' element={<Course/>}/>
+        <Route path='/courses' element={<Course/>}/>
+        <Route path='/courses/:category' element={<Course/>}/>
         {/* <Route path='/' element={<LandingPage/>}/> */}
      </Routes>
     </div>
