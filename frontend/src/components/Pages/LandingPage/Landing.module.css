@@ -1,9 +1,9 @@
 .lgrid{
     display: grid;
-    grid-template-columns: repeat(4,300px);
+    grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(2,300px);
     /* height: 550px; */
-    width: 90%;
+    width: 80%;
     /* border: 1px solid black; */
     margin: auto;
     margin-top: 40px;
