@@ -1,0 +1,20 @@
+.lgrid{
+    display: grid;
+    grid-template-columns: repeat(4,300px);
+    grid-template-rows: repeat(2,300px);
+    /* height: 550px; */
+    width: 90%;
+    /* border: 1px solid black; */
+    margin: auto;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.gridCard{
+   /* border: 1px solid black; */
+   margin-top: 50px;
+   box-sizing: border-box;
+}
+.gridCard>img{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
