@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import React from "react";
 import styles from "./Navbar.module.css";
 import axios from "axios";
@@ -32,18 +32,21 @@ import {
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-  const [token,setToken]=useState("");
-  const loginData=(name)=>{
-    axios.post(`http://localhost:8080/login`,{
-      name
-    }).then((response)=>{setToken(response.data)
-      localStorage.setItem('TOKEN',response.data)
-    });
-  }
+  const [token, setToken] = useState("");
+  const loginData = (name) => {
+    axios
+      .post(`http://localhost:8080/login`, {
+        name,
+      })
+      .then((response) => {
+        setToken(response.data);
+        localStorage.setItem("TOKEN", response.data);
+      });
+  };
   return (
     <div className={styles.container}>
       <div>
-        <img src="LOGO.jpg" alt="" width={85} height={90}/>
+        <img src="LOGO.jpg" alt="" width={85} height={80} />
       </div>
       <div>
         <input
@@ -52,8 +55,13 @@ const Navbar = () => {
         />
       </div>
       <div>
-        <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
-          <Link to="/login">Login/SignUp</Link>
+        <Button
+          className={styles.btn}
+          ref={btnRef}
+          colorScheme="teal"
+          onClick={onOpen}
+        >
+          Login/SignUp
         </Button>
       </div>
       <>
@@ -73,9 +81,12 @@ const Navbar = () => {
               <Menu>
                 <MenuButton as={Button}>Your Accounts</MenuButton>
                 <MenuList>
-                  <MenuItem minH="48px" onClick={()=>{
-                      loginData("Alim")
-                  }}>
+                  <MenuItem
+                    minH="48px"
+                    onClick={() => {
+                      loginData("Alim");
+                    }}
+                  >
                     <Image
                       boxSize="2rem"
                       borderRadius="full"
@@ -85,9 +96,12 @@ const Navbar = () => {
                     />
                     <span>Alim</span>
                   </MenuItem>
-                  <MenuItem minH="40px" onClick={()=>{
-                      loginData("Papil")
-                  }}>
+                  <MenuItem
+                    minH="40px"
+                    onClick={() => {
+                      loginData("Papil");
+                    }}
+                  >
                     <Image
                       boxSize="2rem"
                       borderRadius="full"
@@ -97,9 +111,12 @@ const Navbar = () => {
                     />
                     <span>Papil</span>
                   </MenuItem>
-                  <MenuItem minH="40px" onClick={()=>{
-                      loginData("Prathamesh")
-                  }}>
+                  <MenuItem
+                    minH="40px"
+                    onClick={() => {
+                      loginData("Prathamesh");
+                    }}
+                  >
                     <Image
                       boxSize="2rem"
                       borderRadius="full"
