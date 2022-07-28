@@ -7,7 +7,7 @@ const LandingPage = () => {
     <div>
       <h1>All Categories</h1>
       <div className={styles.lgrid} >
-      <div className={styles.gridCard} ><Link to='/courses/design' ><img src='https://www.webdschool.com/img/other.png' /></Link></div>
+      <div className={styles.gridCard} ><Link to='/courses' ><img src='https://www.webdschool.com/img/other.png' /></Link></div>
         <div className={styles.gridCard} ><Link to='/courses/design' ><img src='https://s.udemycdn.com/home/top-categories/lohp-category-design-v2.jpg' /></Link></div>
         <div className={styles.gridCard} ><Link to='/courses' ><img src='https://s.udemycdn.com/home/top-categories/lohp-category-development-v2.jpg' /></Link></div>
         <div className={styles.gridCard} ><Link to='/courses' ><img src='https://s.udemycdn.com/home/top-categories/lohp-category-marketing-v2.jpg' /></Link></div>

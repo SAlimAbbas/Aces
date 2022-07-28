@@ -1,9 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import {Button} from '@chakra-ui/react';
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import styles from './Course.module.css';
+import { StarIcon } from '@chakra-ui/icons';
+
 
 const Course = () => {
   const [data,setData]=useState([]);
@@ -33,9 +36,14 @@ const Course = () => {
               </div> 
 
               <div className={styles.containerRight}>
-                {el.courseName}<br/>
-                {el.description}<br/>
-                {el.instructor}
+                <h2 style={{"fontWeight":"bold","fontSize":"24px"}}>{el.courseName}</h2>
+                <p>{el.description}</p>
+                <span style={{"color":"darkorange"}}>{el.rating}</span>
+                <StarIcon style={{"color":"darkorange","marginRight":"14px","marginTop":"-7px"}}/>
+                <span style={{"color":"brown"}}>{el.instructor}</span>
+                <p style={{"color":"red","fontWeight":"bold"}}>₹{el.price}</p>
+                <Button colorScheme='purple'>BUY NOW</Button>
+          
               </div>              
         </div>
           )
