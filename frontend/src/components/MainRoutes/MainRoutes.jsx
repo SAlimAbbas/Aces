@@ -7,7 +7,7 @@ const MainRoutes = () => {
   return (
     <div>
      <Routes>
-        <Route path='/' element={<LandingPage/>}/>
+        <Route path='/*' element={<LandingPage/>}/>
         <Route path='courses' element={<Course/>}/>
         {/* <Route path='/' element={<LandingPage/>}/> */}
      </Routes>
