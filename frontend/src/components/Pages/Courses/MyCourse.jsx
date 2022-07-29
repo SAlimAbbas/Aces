@@ -56,7 +56,7 @@ const MyCourse = () => {
       Course
         {data.map((el)=>{
        
-          return <Indprod {...el} renderTime={renderTime} time={time}/>
+          return <Indprod {...el} renderTime={renderTime} time={time} key={el._id}/>
         })}
     </div>
   )
