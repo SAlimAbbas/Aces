@@ -63,7 +63,7 @@ const Navbar = () => {
   };
 
   const logoutName = () => {
-    // setToken(localStorage.setItem("TOKEN",null));
+    setToken(localStorage.setItem("TOKEN",""));
     setUserName(localStorage.setItem("userName",""));
   }
 
@@ -93,9 +93,9 @@ const Navbar = () => {
         </Button>
 
         <Menu >
-        <MenuButton style={{"marginTop":"10px","marginLeft":"10px"}} as={Button} colorScheme="teal">
+        {token?<MenuButton style={{"marginTop":"10px","marginLeft":"10px"}} as={Button} colorScheme="teal">
           Dashboard
-        </MenuButton>
+        </MenuButton>:<></>}
         <MenuList>
           <MenuGroup title="Dashboard">
             <MenuItem>
@@ -199,7 +199,7 @@ const Navbar = () => {
               <Button variant="outline" mr={3} onClick={onClose}>
                 Cancel
               </Button>
-              <Button colorScheme="blue">Save</Button>
+              <Button colorScheme="blue" onClick={onClose}>Save</Button>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
