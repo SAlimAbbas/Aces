@@ -156,6 +156,11 @@ app.post("/buyfromsell",async(req,res)=>{
 
 })
 
+app.get("/getselldata",(req,res)=>{
+    const data=await sellModel.find()
+
+    res.end(JSON.stringify(data))
+})
 
 
 app.post("/buy",async(req,res)=>{
