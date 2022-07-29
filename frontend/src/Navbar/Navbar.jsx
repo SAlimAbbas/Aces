@@ -33,7 +33,10 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const [token, setToken] = useState("");
+  const [userName, setUserName] = useState("");
   const loginData = (name) => {
+    localStorage.setItem("userName", name);
+    loginName();
     axios
       .post(`http://localhost:8080/login`, {
         name,
@@ -42,6 +45,10 @@ const Navbar = () => {
         setToken(response.data);
         localStorage.setItem("TOKEN", response.data);
       });
+  };
+
+  const loginName = () => {
+    setUserName(localStorage.getItem("userName"));
   };
   return (
     <div className={styles.container}>
@@ -61,7 +68,7 @@ const Navbar = () => {
           colorScheme="teal"
           onClick={onOpen}
         >
-          Login/SignUp
+          {userName !== "" ? userName : "Login/SignUp"}
         </Button>
       </div>
       <>
