@@ -28,10 +28,20 @@ import {
   MenuDivider,
   ChevronDownIcon,
   Image,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Fade, ScaleFade, Slide, SlideFade,Collapse,Box
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 
 const Navbar = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose,onToggle } = useDisclosure();
+  // const { isOpenAcc, onToggle } = useDisclosure()
   const btnRef = React.useRef();
   const [token, setToken] = useState("");
   const [userName, setUserName] = useState("");
@@ -51,15 +61,28 @@ const Navbar = () => {
   const loginName = () => {
     setUserName(localStorage.getItem("userName"));
   };
+
+  const logoutName = () => {
+    setToken(localStorage.setItem("TOKEN",""));
+    setUserName(localStorage.setItem("userName",""));
+  }
+
+
+  useEffect(()=>{
+    loginName();
+  },[userName])
+
+ 
+
   return (
     <div className={styles.container}>
       <div className={styles.logoBox}>
-        <img src="Logo.png" alt="" width={85} height={80} />
+        <Link to="/"><img src="Logo.png" alt="" width={85} height={80} /></Link>
       </div>
-      <div>
+      <div style={{"width":"40%"}}>
       <Input variant='filled' placeholder='Find your course here..' className={styles.containerInput} />
       </div>
-      <div>
+      <div >
         <Button
           className={styles.btn}
           ref={btnRef}
@@ -68,6 +91,26 @@ const Navbar = () => {
         >
           {userName !== "" ? userName : "Login/SignUp"}
         </Button>
+
+        <Menu >
+        {token?<MenuButton style={{"marginTop":"10px","marginLeft":"10px"}} as={Button} colorScheme="teal">
+          Dashboard
+        </MenuButton>:<></>}
+        <MenuList>
+          <MenuGroup title="Dashboard">
+            <MenuItem>
+            <Link to="/myaccount">My Account</Link>
+            </MenuItem>
+            <MenuItem><Link to="/mycourse">My Courses</Link></MenuItem>
+            <MenuItem onClick={logoutName}>Logout</MenuItem>
+          </MenuGroup>
+          <MenuDivider />
+          <MenuGroup title="Help">
+            <MenuItem>Docs</MenuItem>
+            <MenuItem>FAQ</MenuItem>
+          </MenuGroup>
+        </MenuList>
+        </Menu>
       </div>
       <>
         <Drawer
@@ -105,7 +148,10 @@ const Navbar = () => {
                     minH="40px"
                     onClick={() => {
                       loginData("Papil");
+                        
                     }}
+
+                    
                   >
                     <Image
                       boxSize="2rem"
@@ -153,7 +199,7 @@ const Navbar = () => {
               <Button variant="outline" mr={3} onClick={onClose}>
                 Cancel
               </Button>
-              <Button colorScheme="blue">Save</Button>
+              <Button colorScheme="blue" onClick={onClose}>Save</Button>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
