@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+
 import {Button} from '@chakra-ui/react';
 import axios from 'axios';
 import { useState } from 'react';
@@ -8,8 +9,15 @@ import styles from './Course.module.css';
 import { StarIcon } from '@chakra-ui/icons';
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 
+
+
+
+
+
+
 const Indprod=({_id,imgUrl,description,rating,instructor,courseName,price,renderTime,time})=>{
-    console.log("time is",time)
+  
+
     return(<>
 
 <div className={styles.container} key={_id}>
@@ -32,7 +40,7 @@ const Indprod=({_id,imgUrl,description,rating,instructor,courseName,price,render
 <div className="timer-wrapper">
 <CountdownCircleTimer
 isPlaying
-duration={time}
+duration={Math.floor(Math.random() * 10)*1000}
 colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
 colorsTime={[10, 6, 3, 0]}
 onComplete={() => ({ shouldRepeat: false, delay: 1 })}

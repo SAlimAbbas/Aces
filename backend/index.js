@@ -8,10 +8,9 @@ const userModel=require("./models/usermodel")
  const adminModel=require("./models/adminmodel")
  var moment = require('moment');
  const transactionModel=require("./models/transactionModel")
- const {webSocket, WebSocketServer}=require("ws")
+
  
- const server=require('http').createServer(app)
- const wss = new WebSocketServer({ server:server });
+
 
 
 app.use(express.urlencoded({extended:true}))
@@ -36,10 +35,11 @@ mongoose.connect(dburl,connectionparams).then(()=>{
 
 
 
-// app.get("/gettime",(req,res)=>{
-//   )
-//     res.end("time")
-// })
+app.get("/gettime",(req,res)=>{
+    console.log(moment().format('LTS'))
+   console.log( moment().add(10, 'minutes').format('LTS'))
+    res.end("time")
+})
 
 
 app.get("/user",async(req,res)=>{
@@ -88,7 +88,7 @@ app.post("/mycourse",async(req,res)=>{
     const {token}=req.body
     console.log("jwt token is",token)
     const user=jwt.verify(token,"SECRETKEY")
-    console.log(user.name)
+    console.log("name is",user.name)
     const data=await userModel.findOne({Name:user.name})
     console.log(data)
     res.end(JSON.stringify(data.Buy))
@@ -133,7 +133,15 @@ app.post("/buy",async(req,res)=>{
     // await userModel.updateOne( { Name: user.name  }, { $pop: { Buy: -1 } } )
      const checkuser=await userModel.find({Name:user.name})
     // res.end(JSON.stringify(checkuser))
-    res.end("Course purchase successfully")
+    // console.log(moment().format('LTS'))
+    // console.log( )
+
+    res.json({
+        data:"course purchas successfully",
+        expiry:moment().add(10, 'minutes').format('LTS'),
+        purchasetime:moment().format('LTS'),
+        courseid:courseid
+    })
    }
 
 })
@@ -175,27 +183,12 @@ app.post("/courses",async(req,res)=>{
   
 })
 
-// -------------------------------------------------------
 
-wss.on('connection', function connection(ws) {
-    console.log("welcom new client")
-    ws.send('welcome new client');
-    ws.on('message', function message(data) {
-      console.log('received: %s', data);
-      ws.send("got you message its",data)
-    });
-  
-  
-  });
-// -----------------------------------------------
 
 app.get("/",(req,res)=>res.send("hello world how are you"))
 
-// app.listen(process.env.PORT || port,()=>{
-//     console.log("server starteed at 8080");
-//     console.log(moment().format('LTS'))
-// })
-
-server.listen(8080,()=>{
-    console.log("listeng port on 8080")
+app.listen(process.env.PORT || port,()=>{
+    console.log("server starteed at 8080");
+    console.log(moment().format('LTS'))
 })
+

@@ -17,6 +17,8 @@ const MyCourse = () => {
   // ---------------------------------
   const time=300
   const renderTime = ({ remainingTime }) => {
+
+    // console.log(moment().format('LTS'))
     if (remainingTime === 0) {
       return <div className="timer">Course Expire</div>;
     }
@@ -34,7 +36,7 @@ const MyCourse = () => {
 
   const getData=()=> {
     const temptoken=localStorage.getItem('TOKEN');
-    console.log(temptoken);
+    // console.log(temptoken);
     const payload={token:temptoken};
    
     axios.post("http://localhost:8080/mycourse",payload).then((res)=>{
@@ -47,6 +49,7 @@ const MyCourse = () => {
     getData();
   },[]);
 
+ 
   console.log(data);
   return (
     <div className={styles.main}>
