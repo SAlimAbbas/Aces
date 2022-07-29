@@ -42,6 +42,7 @@ const Course = () => {
                 <StarIcon style={{"color":"darkorange","marginRight":"14px","marginTop":"-7px"}}/>
                 <span style={{"color":"brown"}}>{el.instructor}</span>
                 <p style={{"color":"red","fontWeight":"bold"}}>₹{el.price}</p>
+                <p style={{"fontWeight":"bold"}}>validity: {el.validity}days</p>
                 <Button colorScheme='purple' onClick={()=>{
                   const token=localStorage.getItem("TOKEN")
                   axios.post("http://localhost:8080/buy",{
@@ -53,7 +54,6 @@ const Course = () => {
                     
                   })
                 }}>BUY NOW</Button>
-                <p>validity: 5 minutes</p>
           
               </div>              
         </div>
