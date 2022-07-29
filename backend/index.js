@@ -8,6 +8,10 @@ const userModel=require("./models/usermodel")
  const adminModel=require("./models/adminmodel")
  var moment = require('moment');
  const transactionModel=require("./models/transactionModel")
+ const {webSocket, WebSocketServer}=require("ws")
+ 
+ const server=require('http').createServer(app)
+ const wss = new WebSocketServer({ server:server });
 
 
 app.use(express.urlencoded({extended:true}))
@@ -171,9 +175,27 @@ app.post("/courses",async(req,res)=>{
   
 })
 
+// -------------------------------------------------------
+
+wss.on('connection', function connection(ws) {
+    console.log("welcom new client")
+    ws.send('welcome new client');
+    ws.on('message', function message(data) {
+      console.log('received: %s', data);
+      ws.send("got you message its",data)
+    });
+  
+  
+  });
+// -----------------------------------------------
+
 app.get("/",(req,res)=>res.send("hello world how are you"))
 
-app.listen(process.env.PORT || port,()=>{
-    console.log("server starteed at 8080");
-    console.log(moment().format('LTS'))
+// app.listen(process.env.PORT || port,()=>{
+//     console.log("server starteed at 8080");
+//     console.log(moment().format('LTS'))
+// })
+
+server.listen(8080,()=>{
+    console.log("listeng port on 8080")
 })
