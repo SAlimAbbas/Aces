@@ -2,6 +2,7 @@ import { useState } from "react";
 import React from "react";
 import styles from "./Navbar.module.css";
 import axios from "axios";
+
 import {
   Drawer,
   DrawerBody,
@@ -52,14 +53,11 @@ const Navbar = () => {
   };
   return (
     <div className={styles.container}>
-      <div>
-        <img src="LOGO.jpg" alt="" width={85} height={80} />
+      <div className={styles.logoBox}>
+        <img src="Logo.png" alt="" width={85} height={80} />
       </div>
       <div>
-        <input
-          className={styles.containerInput}
-          placeholder="Find Your Course Here...."
-        />
+      <Input variant='filled' placeholder='Find your course here..' className={styles.containerInput} />
       </div>
       <div>
         <Button
