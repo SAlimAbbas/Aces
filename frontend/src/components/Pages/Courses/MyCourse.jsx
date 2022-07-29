@@ -6,18 +6,41 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import styles from './Course.module.css';
 import { StarIcon } from '@chakra-ui/icons';
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import Indprod from "./Indprod"
 
 
 const MyCourse = () => {
   const [data,setData]=useState([]);
   const {category}=useParams();
   // console.log(category);
+  // ---------------------------------
+  const time=300
+  const renderTime = ({ remainingTime }) => {
+    if (remainingTime === 0) {
+      return <div className="timer">Course Expire</div>;
+    }
+  
+    return (
+      <div className="timer">
+        <div className="text">Remaining</div>
+        <div className="value">{remainingTime}</div>
+        <div className="text">seconds</div>
+      </div>
+    );
+  }
+ 
+  // -------------------------------
 
   const getData=()=> {
     const temptoken=localStorage.getItem('TOKEN');
     console.log(temptoken);
     const payload={token:temptoken};
-    axios.get(`http://localhost:8080/mycourse`,JSON.stringify(payload)).then((res)=>setData(res.data))
+   
+    axios.post("http://localhost:8080/mycourse",payload).then((res)=>{
+    // console.log(res)
+    setData([...res.data])
+    })
   .catch((err)=>console.log(err));
   }
   useEffect(()=>{
@@ -29,25 +52,8 @@ const MyCourse = () => {
     <div className={styles.main}>
       Course
         {data.map((el)=>{
-          return (
-            <div className={styles.container} key={el._id}>
-
-              <div className={styles.containerLeft}>
-                <img src={el.imgUrl} alt="imageUrl" />
-              </div> 
-
-              <div className={styles.containerRight}>
-                <h2 style={{"fontWeight":"bold","fontSize":"24px"}}>{el.courseName}</h2>
-                <p>{el.description}</p>
-                <span style={{"color":"darkorange"}}>{el.rating}</span>
-                <StarIcon style={{"color":"darkorange","marginRight":"14px","marginTop":"-7px"}}/>
-                <span style={{"color":"brown"}}>{el.instructor}</span>
-                <p style={{"color":"red","fontWeight":"bold"}}>₹{el.price}</p>
-                <Button colorScheme='purple'>SELL</Button>
-          
-              </div>              
-        </div>
-          )
+       
+          return <Indprod {...el} renderTime={renderTime} time={time}/>
         })}
     </div>
   )
