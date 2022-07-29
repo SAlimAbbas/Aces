@@ -6,6 +6,7 @@ var jwt = require('jsonwebtoken');
 const userModel=require("./models/usermodel")
  const courseModel=require("./models/coursemodel")
  const adminModel=require("./models/adminmodel")
+ var moment = require('moment');
  const transactionModel=require("./models/transactionModel")
 
 
@@ -27,6 +28,14 @@ mongoose.connect(dburl,connectionparams).then(()=>{
 }).catch((er)=>{
     console.log(er)
 })
+
+
+
+
+// app.get("/gettime",(req,res)=>{
+//   )
+//     res.end("time")
+// })
 
 
 app.get("/user",async(req,res)=>{
@@ -166,4 +175,5 @@ app.get("/",(req,res)=>res.send("hello world how are you"))
 
 app.listen(process.env.PORT || port,()=>{
     console.log("server starteed at 8080");
+    console.log(moment().format('LTS'))
 })
