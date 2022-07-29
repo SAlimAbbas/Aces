@@ -117,7 +117,7 @@ app.post("/buyfromsell",async(req,res)=>{
     const user=jwt.verify(token,"SECRETKEY")
     console.log("user is ",user.name)
     const requser=await userModel.findOne({Name:user.name})
-    const reqcourse=await courseModel.findOne({_id:courseid})
+    const reqcourse=await newcourseModel.findOne({_id:courseid})
 
     if(selling_price>requser.Amount){
         res.end("Inssufficient Balance")
@@ -131,14 +131,15 @@ app.post("/buyfromsell",async(req,res)=>{
          console.log(`Amount ${selling_price} added to seller account`)
 
          await userModel.updateOne(
-            {Name:requser.Name},
+            {Name:user.Name},
             {$set:{"Amount":requser.Amount-selling_price}}
          )
 
          console.log(`Amount ${selling_price} deduct to seller account`)
 
+         
          await userModel.updateOne(
-            { Name: requser.Name },
+            { Name: user.Name },
             { $push: { Buy: reqcourse } }
          )
 
@@ -156,7 +157,7 @@ app.post("/buyfromsell",async(req,res)=>{
 
 })
 
-app.get("/getselldata",(req,res)=>{
+app.get("/getselldata",async(req,res)=>{
     const data=await sellModel.find()
 
     res.end(JSON.stringify(data))
