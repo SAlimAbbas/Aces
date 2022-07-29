@@ -118,12 +118,16 @@ const Navbar = () => {
                     />
                     <span>Papil</span>
                   </MenuItem>
+
                   <MenuItem
                     minH="40px"
                     onClick={() => {
                       loginData("Prathamesh");
                     }}
                   >
+
+                 
+
                     <Image
                       boxSize="2rem"
                       borderRadius="full"
@@ -131,7 +135,7 @@ const Navbar = () => {
                       alt="Simon the pensive"
                       mr="12px"
                     />
-                    <span>Prathamesh</span>
+                    <span>Prathmesh</span>
                   </MenuItem>
                   <MenuItem minH="40px">
                     <Image
