@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import { useParams } from 'react-router-dom';
 import {Button} from '@chakra-ui/react';
 import axios from 'axios';
@@ -13,24 +13,25 @@ import Indprod from "./Indprod"
 const MyCourse = () => {
   const [data,setData]=useState([]);
   const {category}=useParams();
+  
   // console.log(category);
   // ---------------------------------
   const time=300
-  const renderTime = ({ remainingTime }) => {
-
-    // console.log(moment().format('LTS'))
-    if (remainingTime === 0) {
-      return <div className="timer">Course Expire</div>;
-    }
+  // const renderTime = ({ remainingTime }) => {
+   
+  //   // console.log(moment().format('LTS'))
+  //   if (remainingTime === 0) {
+  //     return <div className="timer">Course Expire</div>;
+  //   }
   
-    return (
-      <div className="timer">
-        <div className="text">Remaining</div>
-        <div className="value">{remainingTime}</div>
-        <div className="text">seconds</div>
-      </div>
-    );
-  }
+  //   return (
+  //     <div className="timer">
+  //       <div className="text">Remaining</div>
+  //       <div className="value">{remainingTime}</div>
+  //       <div className="text">seconds</div>
+  //     </div>
+  //   );
+  // }
  
   // -------------------------------
 
@@ -56,7 +57,8 @@ const MyCourse = () => {
       Course
         {data.map((el)=>{
        
-          return <Indprod {...el} renderTime={renderTime} time={time}/>
+          return <Indprod {...el} />
+          // renderTime={renderTime}
         })}
     </div>
   )

@@ -8,7 +8,8 @@
             "description":"This Adobe Photoshop Beginner Course will teach a Beginner Photoshop user all essentials of Adobe Photoshop CC",
             "category":"design",
             "instructor":"Manfred Werner",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"20"  
         },
         {
             "courseName":"Copywriting - Become a Freelance Copywriter, your own boss",
@@ -18,7 +19,8 @@
             "description":"Build a successful freelance copywriting business - turn basic writing skills into a paycheck.",
             "category":"marketing",
             "instructor":"Len Smith, Sean kayle",
-            "rating":"4.3"  
+            "rating":"4.3",
+            "validity":"20"    
         },
         {
             "courseName":"How to Market Yourself as a Coach or Consultant",
@@ -28,7 +30,8 @@
             "description":"Learn a Proven, Step-by-Step Process You Can Use to Package, Brand, Market, & Sell Your Coaching or Consulting Services",
             "category":"marketing",
             "instructor":"Debbie Lachusa",
-            "rating":"4.8"  
+            "rating":"4.8",
+            "validity":"25"    
         },
         {
             "courseName":"Google Ads for Beginners",
@@ -38,7 +41,8 @@
             "description":"Learn how to effectively use Google Ads to reach more customers online and grow your business.",
             "category":"marketing",
             "instructor":"Corey Rabazinski",
-            "rating":"4.4"  
+            "rating":"4.4",
+            "validity":"30"    
         },  
         {
             "courseName":"Marketing Research: support your marketing decisions",
@@ -48,7 +52,8 @@
             "description":"Discover the extra advantage of any Business. A practical step by step guide to Marketing Information and Research.",
             "category":"marketing",
             "instructor":"Corey Rabazinski",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"20"    
         },
         {
             "courseName":"Business Writing & Technical Writing Immersion",
@@ -58,7 +63,8 @@
             "description":"How to plan, structure, outline, write, edit and deliver effective business and technical writing, perfectly every time.",
             "category":"marketing",
             "instructor":"Starweaver Team",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"25"    
         },
         {
             "courseName":"CCNA 2020 200-125 Video Boot Camp With Chris Bryant",
@@ -68,7 +74,8 @@
             "description":"Join The 90,000+ Students Who Are Learning Real-World Skills AND Earning Their CCNA!",
             "category":"IT & Software",
             "instructor":"Chris Brynt",
-            "rating":"4.3"  
+            "rating":"4.3",
+            "validity":"10"    
         },
         {
             "courseName":"CCNP All-in-1 Video Boot Camp With Chris Bryant",
@@ -78,7 +85,8 @@
             "description":"Earn Your CCNP With Chris Bryant ! Pass SWITCH 300-115, ROUTE 300-101, and TSHOOT 300-135!",
             "category":"IT & Software",
             "instructor":"Chris Brynt",
-            "rating":"4.7"  
+            "rating":"4.7",
+            "validity":"15"    
         },
         {
             "courseName":"Introduction To Fiber Optic Cabling",
@@ -88,7 +96,8 @@
             "description":"Welcome! This course is designed to give you a good understand of fiber optics and fiber data transmission.",
             "category":"IT & Software",
             "instructor":"Sebastian Flores",
-            "rating":"4.4"  
+            "rating":"4.4",
+            "validity":"20"    
         },
         {
             "courseName":"IT Troubleshooting Skill Training",
@@ -98,7 +107,8 @@
             "description":"IT Troubleshooting 101 for Analysts and Managers",
             "category":"IT & Software",
             "instructor":"Noel Temene",
-            "rating":"4.2"  
+            "rating":"4.2",
+            "validity":"30"    
         },
         {
             "courseName":"VLSI - Essential concepts and detailed interview guide",
@@ -108,7 +118,8 @@
             "description":"VLSI Academy",
             "category":"IT & Software",
             "instructor":"Kunal Gosh",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"25"    
         },
         {
             "courseName":"Adventures in Classical Music—Music Appreciation for All!",
@@ -118,7 +129,8 @@
             "description":"Understand and enjoy classical music at your own pace. A music history course, including a music theory introduction.",
             "category":"music",
             "instructor":"Williem Neely",
-            "rating":"4.6"  
+            "rating":"4.6",
+            "validity":"20"    
         },
         {
             "courseName":"Music Composition 1",
@@ -128,7 +140,8 @@
             "description":"Learn how to compose well-written rhythms and melodies",
             "category":"music",
             "instructor":"Jonathan Peters ",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"20"    
         },
         {
             "courseName":"Music Theory",
@@ -138,7 +151,8 @@
             "description":"An in-depth and straight forward approach to understanding music.",
             "category":"music",
             "instructor":"Jonathan Peters ",
-            "rating":"4.7"  
+            "rating":"4.7",
+            "validity":"25"    
         },
         {
             "courseName":"Music Composition 2",
@@ -148,7 +162,8 @@
             "description":"Harmony and Compositional Form",
             "category":"music",
             "instructor":"Jonathan Peters ",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"30"    
         },
         {
             "courseName":"Prepare for Music Theory ABRSM 1 to 5",
@@ -158,7 +173,8 @@
             "description":"All you need to know to fast track to success with the ABRSM theory examinations grades 1 - 5.",
             "category":"music",
             "instructor":"Micheal Luck ",
-            "rating":"4.9"  
+            "rating":"4.9",
+            "validity":"40"    
         },
 
         {
@@ -169,7 +185,8 @@
             "description":"See results today! 50 photography tips for taking amazing photos with your DSLR, Mirrorless or compact camera.",
             "category":"photography",
             "instructor":"Barnie raffel AMPA",
-            "rating":"4.8"  
+            "rating":"4.8",
+            "validity":"50"    
         },
         {
             "courseName":"Photography for Kids: Project-Based Beginner Photography",
@@ -179,7 +196,8 @@
             "description":"12 weeks of adventure projects make this the perfect course for kids and beginners to learn how to use a camera properly",
             "category":"photography",
             "instructor":"Phil Ebinar",
-            "rating":"4.3"  
+            "rating":"4.3",
+            "validity":"30"    
         },
         {
             "courseName":"Basic Food Photography",
@@ -189,7 +207,8 @@
             "description":"Learn how to take delicious food photos from scratch",
             "category":"photography",
             "instructor":"Andrew Olson",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"20"    
         },
         {
             "courseName":"Beginner Nikon Digital SLR (DSLR) Photography",
@@ -199,7 +218,8 @@
             "description":"Learn how to use your camera intuitively. Learn through doing rather than memorizing.",
             "category":"photography",
             "instructor":"JP Teaches",
-            "rating":"4.6"  
+            "rating":"4.6",
+            "validity":"25"    
         },
         {
             "courseName":"Mastering Architecture and Real Estate Photography",
@@ -209,7 +229,8 @@
             "description":"Start a business photographing real estate photography jobs for architects, builders, and real estate agents",
             "category":"photography",
             "instructor":"Charlie Blonede",
-            "rating":"4.4"  
+            "rating":"4.4",
+            "validity":"20"    
            
         },
         {
@@ -220,7 +241,8 @@
             "description":"Get a job in UX and build your user research and UX design skills with this hands-on user experience training course.",
             "category":"design",
             "instructor":"David Travis",
-            "rating":"4.7"  
+            "rating":"4.7",
+            "validity":"40"    
         },
         {
             "courseName":"Essential Skills for Designers - Masking",
@@ -230,7 +252,8 @@
             "description":"Learn everything you need to know about masking techniques in Adobe Photoshop, Illustrator and InDesign.",
             "category":"design",
             "instructor":"Martin Perhiniak",
-            "rating":"4.6"  
+            "rating":"4.6",
+            "validity":"40"    
         },
         {
             "courseName":"Become a UX Designer | Learn the Skills & Get the Job",
@@ -240,7 +263,8 @@
             "description":"UX based on real world examples. Gain powerful UX skills you can use to start a UX career or improve your projects.",
             "category":"design",
             "instructor":"Brenden-Bolton-Klinger",
-            "rating":"4.3"  
+            "rating":"4.3",
+            "validity":"30"    
         },
         {
             "courseName":"Adobe Premiere Pro CC Tutorial - MasterClass Training",
@@ -250,7 +274,8 @@
             "description":"Adobe Premiere Pro CC tutorial for learning at your own pace from a pro. Over 18 hours of high quality training.",
             "category":"design",
             "instructor":"Infinity Skills",
-            "rating":"4.3"  
+            "rating":"4.3",
+            "validity":"30"    
         },
         {
             "courseName":"Javascript for Beginners",
@@ -260,7 +285,8 @@
             "description":"Learn javascript online and supercharge your web design with this Javascript for beginners training course.",
             "category":"development",
             "instructor":"Tech Learning Network",
-            "rating":"4.4"  
+            "rating":"4.4",
+            "validity":"30"    
         },
         {
             "courseName":"Learn C# Programming (In Ten Easy Steps)",
@@ -270,7 +296,8 @@
             "description":"The simplest way to learn C# programming.",
             "category":"development",
             "instructor":"Huw Collingbourne",
-            "rating":"4.3"  
+            "rating":"4.3",
+            "validity":"50"   
         },
         {
             "courseName":"The Complete 2020 Fullstack Web Developer Course",
@@ -280,7 +307,8 @@
             "description":"Learn HTML5, CSS3, JavaScript, Python, Wagtail CMS, PHP & MySQL from scratch!",
             "category":"development",
             "instructor":"kalob Tauline",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"50"    
         },
         {
             "courseName":"Kids Coding - Introduction to HTML, CSS and JavaScript!",
@@ -290,7 +318,8 @@
             "description":"Your kid could be the next Zuckerberg!",
             "category":"development",
             "instructor":"John Bura",
-            "rating":"4.2"  
+            "rating":"4.2",
+            "validity":"80"    
         },
         {
             "courseName":"Learn Web Designing & HTML5/CSS3 Essentials in 4-Hours",
@@ -300,7 +329,8 @@
             "description":"Convert Photoshop Designs into Stunning HTML5 & CSS3 websites with confidence. Absolutely no prior experience necessary!",
             "category":"development",
             "instructor":"Code College",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"10"    
         },
         {
             "courseName":"Excel Deep Dive: Pivot Tables Workshop",
@@ -310,7 +340,8 @@
             "description":"Excel data mastery is possible! Learn how to use pivot tables in excel and learn how to use pivot tables to get a raise",
             "category":"personal development",
             "instructor":"Alex Mozes",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"30"    
         },
         {
             "courseName":"Learning How to Learn",
@@ -320,7 +351,8 @@
             "description":"Becoming your own Brain Mechanic - Know how to keep your genius mind open.",
             "category":"personal development",
             "instructor":"Donna Cercone",
-            "rating":"4.7"  
+            "rating":"4.7",
+            "validity":"30"    
         },
         {
             "courseName":"Mind Mapping Mastery Effective Mind Maps -> Step by Step",
@@ -330,7 +362,8 @@
             "description":"Mind Mapping - SMART Productivity and Memory Tool: Think Clearly, Organise, & Plan better; Study, Learn, & Recall Faster",
             "category":"personal development",
             "instructor":"Barry Mapp",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"40"    
         },
 
         {
@@ -341,7 +374,8 @@
             "description":"Find your passion, love your career, reach your potential and live a life of meaning, purpose, and fulfillment",
             "category":"personal development",
             "instructor":"Joeel",
-            "rating":"4.6"  
+            "rating":"4.6",
+            "validity":"60"    
         },
         {
             "courseName":"Radiate Confidence: How to Create a 1000 Watt Presence",
@@ -351,7 +385,8 @@
             "description":"Helping you unlock your inner light, or presence, so you can easily, effortlessly connect with everyone you meet.",
             "category":"personal development",
             "instructor":"Alex-Fischer",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"20"    
         },
         {
             "courseName":"Master Your Mindset & Brain: Framestorm Your Way to Success",
@@ -361,7 +396,8 @@
             "description":"Excel in any situation. Tweak your mindset in brain-smart ways. Master class in reframing based on neuroscience.",
             "category":"Business",
             "instructor":"Anette",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"25"    
         },
         {
             "courseName":"Customer Service Training",
@@ -371,7 +407,8 @@
             "description":"Learn the basics of customer service its practical application by taking this customer service course.",
             "category":"Business",
             "instructor":"Webucator Training",
-            "rating":"4.5"  
+            "rating":"4.5",
+            "validity":"20"    
         },
         {
             "courseName":"Storytelling for Business",
@@ -381,7 +418,8 @@
             "description":"Grab attention. Create emotion. Inspire action.",
             "category":"Business",
             "instructor":"Kevin Allison",
-            "rating":"4.2"  
+            "rating":"4.2",
+            "validity":"60"    
         },
         {
             "courseName":"Directing the Actor: A USC course with Nina Foch",
@@ -391,7 +429,8 @@
             "description":"Learn directing and acting techniques from renowned actress Nina Foch in this USC Master Class.",
             "category":"Business",
             "instructor":"Nina Foch",
-            "rating":"4.8"  
+            "rating":"4.8",
+            "validity":"60"    
         },
         {
             "courseName":"Salary Negotiation: How to Negotiate a Raise or Promotion",
@@ -401,7 +440,8 @@
             "description":"Get paid what you are worth. Awesome salary negotiation tips and training to get a raise or a promotion.",
             "category":"Business",
             "instructor":"Jim Hopper",
-            "rating":"4.4"  
+            "rating":"4.4",
+            "validity":"40"    
         }
 
     ]
