@@ -120,7 +120,7 @@ const Navbar = () => {
                   <MenuItem
                     minH="40px"
                     onClick={() => {
-                      loginData("Prathamesh");
+                      loginData("Prathmesh");
                     }}
                   >
 

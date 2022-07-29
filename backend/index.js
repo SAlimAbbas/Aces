@@ -9,6 +9,9 @@ const userModel=require("./models/usermodel")
  var moment = require('moment');
  const transactionModel=require("./models/transactionModel")
 
+ 
+
+
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -32,10 +35,11 @@ mongoose.connect(dburl,connectionparams).then(()=>{
 
 
 
-// app.get("/gettime",(req,res)=>{
-//   )
-//     res.end("time")
-// })
+app.get("/gettime",(req,res)=>{
+    console.log(moment().format('LTS'))
+   console.log( moment().add(10, 'minutes').format('LTS'))
+    res.end("time")
+})
 
 
 app.get("/user",async(req,res)=>{
@@ -84,7 +88,7 @@ app.post("/mycourse",async(req,res)=>{
     const {token}=req.body
     console.log("jwt token is",token)
     const user=jwt.verify(token,"SECRETKEY")
-    console.log(user.name)
+    console.log("name is",user.name)
     const data=await userModel.findOne({Name:user.name})
     console.log(data)
     res.end(JSON.stringify(data.Buy))
@@ -129,7 +133,15 @@ app.post("/buy",async(req,res)=>{
     // await userModel.updateOne( { Name: user.name  }, { $pop: { Buy: -1 } } )
      const checkuser=await userModel.find({Name:user.name})
     // res.end(JSON.stringify(checkuser))
-    res.end("Course purchase successfully")
+    // console.log(moment().format('LTS'))
+    // console.log( )
+
+    res.json({
+        data:"course purchas successfully",
+        expiry:moment().add(10, 'minutes').format('LTS'),
+        purchasetime:moment().format('LTS'),
+        courseid:courseid
+    })
    }
 
 })
@@ -171,9 +183,12 @@ app.post("/courses",async(req,res)=>{
   
 })
 
+
+
 app.get("/",(req,res)=>res.send("hello world how are you"))
 
 app.listen(process.env.PORT || port,()=>{
     console.log("server starteed at 8080");
     console.log(moment().format('LTS'))
 })
+

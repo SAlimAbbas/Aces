@@ -48,7 +48,9 @@ const Course = () => {
                     token,
                     courseid:el._id
                   }).then(res=>{
-                    alert(res.data)
+                    console.log(res)
+                    alert(res.data.data)
+                    
                   })
                 }}>BUY NOW</Button>
                 <p>validity: 5 minutes</p>
