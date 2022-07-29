@@ -6,7 +6,9 @@ var jwt = require('jsonwebtoken');
 const userModel=require("./models/usermodel")
  const courseModel=require("./models/coursemodel")
  const adminModel=require("./models/adminmodel")
+ const  newcourseModel=require("./models/newcourseModel")
  var moment = require('moment');
+ const sellModel=require("./models/sellingdataModel")
  const transactionModel=require("./models/transactionModel")
 
  
@@ -40,6 +42,9 @@ app.get("/gettime",(req,res)=>{
    console.log( moment().add(10, 'minutes').format('LTS'))
     res.end("time")
 })
+
+
+
 
 
 app.get("/user",async(req,res)=>{
@@ -96,6 +101,63 @@ app.post("/mycourse",async(req,res)=>{
    
    
 })
+
+app.get("/trial",async(req,res)=>{
+    const data=await newcourseModel.find()
+
+    console.log(data)
+    res.end(JSON.stringify(data))
+})
+
+
+
+app.post("/buyfromsell",async(req,res)=>{
+    const {courseid,sellername,token, selling_price}=req.body
+
+    const user=jwt.verify(token,"SECRETKEY")
+    console.log("user is ",user.name)
+    const requser=await userModel.findOne({Name:user.name})
+    const reqcourse=await courseModel.findOne({_id:courseid})
+
+    if(selling_price>requser.Amount){
+        res.end("Inssufficient Balance")
+    }
+    else{
+
+        await userModel.updateOne(
+            {Name:sellername},
+            {$set:{"Amount":requser.Amount+selling_price}}
+         )
+         console.log(`Amount ${selling_price} added to seller account`)
+
+         await userModel.updateOne(
+            {Name:requser.Name},
+            {$set:{"Amount":requser.Amount-selling_price}}
+         )
+
+         console.log(`Amount ${selling_price} deduct to seller account`)
+
+         await userModel.updateOne(
+            { Name: requser.Name },
+            { $push: { Buy: reqcourse } }
+         )
+
+         await userModel.updateOne( { Name:sellername}, { $pull: { Buy: { _id: courseid } } } )
+
+         await sellModel.deleteOne({_id:courseid})
+
+         res.end("data buy from selling data successfully")
+
+
+        
+    }
+
+
+
+})
+
+
+
 app.post("/buy",async(req,res)=>{
     const {token,courseid}=req.body
     // token verified
@@ -106,7 +168,7 @@ app.post("/buy",async(req,res)=>{
 //    got course id from body
 
    
-   const reqcourse=await courseModel.findOne({_id:courseid})
+   const reqcourse=await newcourseModel.findOne({_id:courseid})
     
   
    if(reqcourse.price>requser.Amount){
@@ -148,7 +210,7 @@ app.post("/buy",async(req,res)=>{
 
 app.get("/products",async(req,res)=>{
 
-    const data=new courseModel({
+    const data=new newcourseModel({
         "courseName":"User Experience (UX): The Ultimate Guide to Usability and UX",
         "imgUrl":"https://img-c.udemycdn.com/course/240x135/28258_8a7e_13.jpg",
         "mrp":2999,
@@ -170,17 +232,40 @@ app.post("/courses",async(req,res)=>{
    
     const {category}=req.body
   if(category){
-    const data= await courseModel.find({category})
+    const data= await newcourseModel.find({category})
     console.log("data is",data);
     res.end(JSON.stringify(data))
   }
   else{
-    const data= await courseModel.find()
+    const data= await newcourseModel.find()
     res.end(JSON.stringify(data))
-  }
-    
-  
-  
+  } 
+})
+
+app.post("/sell",async(req,res)=>{
+    const {courseid,selling_price,validity,Sellername}=req.body
+    console.log(courseid)
+     const data= await newcourseModel.findOne({_id:courseid})
+
+    const savesellingdata= new sellModel({
+    "courseid":courseid,
+	"validity":validity,
+	"sellername":Sellername,
+    "mrp":data.mrp,
+    "description":data.description,
+    "image": data.imgUrl,
+    "courseName":data.courseName,
+    "category":data.category,
+    "selling_price":selling_price,
+    "instructor":data.instructor,
+    "rating":data.rating
+
+    })
+    await savesellingdata.save()
+
+    res.end("sell prod")
+
+
 })
 
 
