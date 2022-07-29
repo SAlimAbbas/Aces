@@ -2,13 +2,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import { Button } from "@chakra-ui/react";
+import { Button, NumberDecrementStepper } from "@chakra-ui/react";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
 import styles from "./Course.module.css";
 import { StarIcon } from "@chakra-ui/icons";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
+import { useToast } from '@chakra-ui/react'
 
 import {
   Modal,
@@ -30,14 +31,19 @@ const Indprod = ({
   instructor,
   courseName,
   price,
+  validity,
   renderTime,
   time,
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [sell,setSell]=useState("");
+  const localData=localStorage.getItem("userName");
+  const toast = useToast();
+
   console.log("ID",_id)
   return (
     <>
-      <div className={styles.container} key={_id}>
+      <div className={styles.container}>
         <div className={styles.containerLeft}>
           <img src={imgUrl} alt="imageUrl" />
         </div>
@@ -55,6 +61,7 @@ const Indprod = ({
           />
           <span style={{ color: "brown" }}>{instructor}</span>
           <p style={{ color: "red", fontWeight: "bold" }}>₹{price}</p>
+          <p style={{fontWeight: "bold" }}>Validity: {validity}days</p>
           <Button onClick={onOpen} colorScheme="purple">
             SELL
           </Button>
@@ -69,29 +76,36 @@ const Indprod = ({
                 <ModalBody>
                   <div>
                     <label>Course Name</label>
-                    <Input value={courseName} />
+                    <Input value={courseName} disabled />
                   </div>
 
                   <div>
                     <label>Validity</label>
-                    <Input />
+                    <Input value={Number(validity)-1} disabled/>
                   </div>
                   <div>
                     <label>CourseId </label>
-                    <Input value={_id} />
+                    <Input value={_id} disabled/>
                   </div>
                   <div>
                     <label>Seller Name</label>
-                    <Input />
+                    <Input required value={localData} disabled/>
                   </div>
                   <div>
                     <label>Selling Price</label>
-                    <Input />
+                  
+                    <Input required onChange={(e) =>{setSell(e.target.value)}} />
                   </div>
                 </ModalBody>
 
                 <ModalFooter>
-                  <Button colorScheme="blue" mr={3} onClick={onClose}>
+                  <Button colorScheme="blue" mr={3} onClick={()=>{
+                    onClose()
+                    const payload={courseid:_id,selling_price:Number(sell),Sellername:localData,validity:validity}
+                  axios.post('http://localhost:8080/sell',payload).then(res=>console.log(res));
+                    // console.log(payload);
+                  
+                  }}>
                     Proceed To Sell
                   </Button>
                   {/* <Button variant="ghost">Secondary Action</Button> */}
@@ -101,7 +115,7 @@ const Indprod = ({
           </>
         </div>
         <div>
-          <div className="timer-wrapper">
+          {/* <div className="timer-wrapper">
             <CountdownCircleTimer
               isPlaying
               duration={Math.floor(Math.random() * 10) * 1000}
@@ -111,7 +125,7 @@ const Indprod = ({
             >
               {renderTime}
             </CountdownCircleTimer>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

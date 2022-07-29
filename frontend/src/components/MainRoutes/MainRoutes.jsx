@@ -4,6 +4,7 @@ import Account from '../Pages/Account/Account';
 import Course from '../Pages/Courses/Course';
 import MyCourse from '../Pages/Courses/MyCourse';
 import LandingPage from '../Pages/LandingPage/LandingPage';
+import Selling from '../Pages/Selling/Selling';
 
 const MainRoutes = () => {
   return (
@@ -13,7 +14,8 @@ const MainRoutes = () => {
         <Route path='/courses' element={<Course/>}/>
         <Route path='/courses/:category' element={<Course/>}/>
         <Route path='/mycourse' element={<MyCourse/>}/>
-        <Route path='/myaccount' element={<Account/>}/>
+        <Route path='/myaccount' element={<Account/>}/> 
+        <Route path='/sell' element={<Selling/>}/> 
      </Routes>
     </div>
   )
