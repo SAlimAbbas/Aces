@@ -9,7 +9,6 @@ import { StarIcon } from '@chakra-ui/icons';
 
 const Selling = () => {
     const [data,setData]=useState([]);
-    const {category}=useParams();
     // console.log(category);
   
     const getData=()=> {

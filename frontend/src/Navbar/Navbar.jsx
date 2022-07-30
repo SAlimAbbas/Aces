@@ -102,6 +102,7 @@ const Navbar = () => {
             <Link to="/myaccount">My Account</Link>
             </MenuItem>
             <MenuItem><Link to="/mycourse">My Courses</Link></MenuItem>
+            <MenuItem><Link to="/sell">Resell Courses</Link></MenuItem>
             <MenuItem onClick={logoutName}>Logout</MenuItem>
           </MenuGroup>
           <MenuDivider />
@@ -125,7 +126,7 @@ const Navbar = () => {
             <DrawerHeader>Create your account</DrawerHeader>
 
             <DrawerBody>
-              <Input placeholder="Type here..." />
+              {/* <Input placeholder="Type here..." /> */}
               <Menu>
                 <MenuButton as={Button}>Your Accounts</MenuButton>
                 <MenuList>

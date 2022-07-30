@@ -164,6 +164,15 @@ app.get("/getselldata",async(req,res)=>{
 })
 
 
+app.post("/account",async(req,res)=>{
+
+    const {userName}=req.body;
+    const userdata=await userModel.findOne({Name:userName});
+     console.log(userdata);
+    res.end(JSON.stringify(userdata));
+
+})
+
 app.post("/buy",async(req,res)=>{
     const {token,courseid}=req.body
     // token verified

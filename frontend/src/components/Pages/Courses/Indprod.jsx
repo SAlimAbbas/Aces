@@ -9,7 +9,8 @@ import { useEffect } from "react";
 import styles from "./Course.module.css";
 import { StarIcon } from "@chakra-ui/icons";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
-import { useToast } from '@chakra-ui/react'
+import { useToast } from '@chakra-ui/react';
+import { WrapItem,Wrap } from '@chakra-ui/react'
 
 import {
   Modal,
@@ -39,6 +40,10 @@ const Indprod = ({
   const [sell,setSell]=useState("");
   const localData=localStorage.getItem("userName");
   const toast = useToast();
+  const positions = [
+    'top-right',
+    
+  ]
 
   console.log("ID",_id)
   return (
@@ -99,37 +104,46 @@ const Indprod = ({
                 </ModalBody>
 
                 <ModalFooter>
-                  <Button colorScheme="blue" mr={3} onClick={()=>{
-                    onClose()
-                    const payload={courseid:_id,selling_price:Number(sell),Sellername:localData,validity:validity}
-                  axios.post('http://localhost:8080/sell',payload).then(res=>console.log(res));
-                    // console.log(payload);
-                  
-                  }}>
-                    Proceed To Sell
-                  </Button>
-                  {/* <Button variant="ghost">Secondary Action</Button> */}
+                
+                
+                
+                  <Wrap >
+                    {positions.map((position, i) => (
+                      <WrapItem key={i}>
+                        <Button colorScheme="blue"mr={3}
+                          onClick={() =>{
+                            toast({
+                              title: `course sold successfully`,
+                              position: position,
+                              isClosable: true,
+                            })
+                             
+                            onClose()
+                            const payload={courseid:_id,selling_price:Number(sell),Sellername:localData,validity:validity}
+                            axios.post('http://localhost:8080/sell',payload).then(res=>console.log(res));
+                          }
+                            
+                            
+                          }
+                        >
+                          Proceed To Sell
+                        </Button>
+                      </WrapItem>
+                    ))}
+                    </Wrap>
+        
                 </ModalFooter>
               </ModalContent>
             </Modal>
           </>
         </div>
         <div>
-          {/* <div className="timer-wrapper">
-            <CountdownCircleTimer
-              isPlaying
-              duration={Math.floor(Math.random() * 10) * 1000}
-              colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
-              colorsTime={[10, 6, 3, 0]}
-              onComplete={() => ({ shouldRepeat: false, delay: 1 })}
-            >
-              {renderTime}
-            </CountdownCircleTimer>
-          </div> */}
         </div>
       </div>
     </>
   );
 };
+              // 
+              
 
 export default Indprod;
