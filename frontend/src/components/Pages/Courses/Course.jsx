@@ -6,12 +6,17 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import styles from './Course.module.css';
 import { StarIcon } from '@chakra-ui/icons';
+import { useToast,WrapItem,Wrap } from '@chakra-ui/react'
 
 
 const Course = () => {
   const [data,setData]=useState([]);
+  const toast = useToast();
+  const positions = [
+  'top-right',
+  
+]
   const {category}=useParams();
-  // console.log(category);
 
   const getData=()=> {
     axios.post(`http://localhost:8080/courses`,{
@@ -42,18 +47,34 @@ const Course = () => {
                 <StarIcon style={{"color":"darkorange","marginRight":"14px","marginTop":"-7px"}}/>
                 <span style={{"color":"brown"}}>{el.instructor}</span>
                 <p style={{"color":"red","fontWeight":"bold"}}>₹{el.price}</p>
-                <Button colorScheme='purple' onClick={()=>{
-                  const token=localStorage.getItem("TOKEN")
-                  axios.post("http://localhost:8080/buy",{
-                    token,
-                    courseid:el._id
-                  }).then(res=>{
-                    console.log(res)
-                    alert(res.data.data)
-                    
-                  })
-                }}>BUY NOW</Button>
-                <p>validity: 5 minutes</p>
+                <p style={{"fontWeight":"bold"}}>validity: {el.validity}days</p>
+                <Wrap >
+                  {positions.map((position, i) => (
+                    <WrapItem key={i}>
+                      <Button colorScheme="pink"
+                        onClick={() =>{
+                          toast({
+                            title: `course bought successfully`,
+                            position: position,
+                            isClosable: true,
+                          })
+                            const token=localStorage.getItem("TOKEN")
+                          axios.post("http://localhost:8080/buy",{
+                            token,
+                            courseid:el._id
+                          }).then(res=>{
+                            console.log(res)
+                          })
+                        }
+                          
+                          
+                        }
+                      >
+                        BUY
+                      </Button>
+                    </WrapItem>
+                  ))}
+                  </Wrap>
           
               </div>              
         </div>
